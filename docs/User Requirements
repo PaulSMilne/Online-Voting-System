@@ -1,0 +1,84 @@
+*User Requirements
+
+**Customer Brief:
+
+Pub of the Year
+
+The Edinburgh pub of the year vote is underway! The Campaign for Real Ale would like an administration website to track the votes for the best pub as voted by the pubs themselves. Unfortunately, it’s a postal ballot :( and CAMRA need to enter the results into a web based application.
+
+The rules are:
+
+ - Pubs can vote for other pubs but not themselves
+ - Each pub has 3 votes to cast
+
+As an MVP CAMRA would like to:
+
+- Enter pubs into their database
+- Enter the votes for each pub
+- Display the results in a league table
+
+Further functionality could include:
+
+- Display a league table of areas with best pubs (Leith, Morningside, Marchmont, City Centre)
+- A route that sends down the results data as JSON
+
+**What is required
+
+The user will need a web based form to do two things: enter a pub and record its votes for candidate pubs. It should be impossible for a pub to vote for itself. Any pub can vote for up to 3 candidate pubs. The end result of this process will be a leaderboard showing the pubs' rankings based on their votes. There should  be some differentiating data, such as posts codes, in the case of pubs with the same name. The post code could be used to group pubs by area. It might be possible to export results data as Json.
+
+The user entry form should be straightforward with few decisions for the user to make, and to have inbuilt accessibility features.
+
+For the purposes of development it would be nice to have an automatic voting app that would randomly choose 3 pubs from a given list to simulate voting. https://ruby-doc.org/core-2.2.0/Array.html#method-i-sample
+
+Assumptions: As pubs have received a ballot, CAMRA should have a list of eligible pubs voting, otherwise known as an electoral register. It can also be assumed, as this is a CAMRA event, that only real ale pubs are eligible to receive votes. In fact, it's a good bet that the pubs voting are the same as pubs eligible to receive votes. This is an assumption that I'm going to make for this project.
+
+**Gather and Prioritise
+
+The user MUST have a web based form to do two things:
+    •   enter a pub and 
+    •   record its votes for candidate pubs
+
+The end result of this process MUST be
+    •   a leaderboard showing the pubs' rankings based on their votes.
+
+The app MUST ensure
+    •   no more than three votes from any pub
+    •   the pub cannot vote for itself. 
+    •   Pubs with the same name are differentiated
+    •   Pubs cannot vote more than once.
+
+The user SHOULD be able to 
+    •   choose the voting pub's name from the list of pubs that will change and have fewer pubs to choose from as the voting proceeds. 
+    •   see a checklist of candidate pubs.
+
+Results could be exportable with json.
+
+For the future, a publicly viewable app might allow:
+    •   Pubs grouped by area
+    •   Live data about what beers are available where
+    •   Allow public to influence the ranking by voting
+    •   Google map of pubs
+
+Also, the app could be expanded for elections without a set list of pubs eligible to vote and be candidates.
+
+
+** Concentrated version
+
+Users   •   enter pubs that are voting
+        •   enter votes for pubs
+        
+App     •   flag pubs when they vote
+        •   flag pubs when they are voted for
+        •   track number of votes per pub
+        •   disallow pub from voting more than once
+        •   disallow pub from voting for itself
+        •   disallow more than 3 votes from a pub
+        •   differentiate between pubs with the same name
+        •   display results in a leaderboard
+
+Extras  •   public leaderboard with pubs grouped by area
+        •   map with pub locations flagged
+        •   public voting
+        •   real time beer availability
+        •   expanded for votes with unknown voters and candidates.
+

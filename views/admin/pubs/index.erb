@@ -1,0 +1,39 @@
+
+
+<p style="text-align:center"><a href="/admin/pubs/new" class="button">Add a new pub</a></p>
+
+<table id="all_pubs">
+<tr>
+    <th>
+        Name
+    </th>
+    <th>
+        Postcode
+    </th>
+    <th>
+        Registered
+    </th>
+</tr>
+<% @pubs.each do |pub|%>
+
+<tr>
+    <td>
+        <a href="/admin/pubs/<%= pub.id  %>"><%= pub.name %></a>
+    </td>
+    <td>
+        <%= pub.postcode %>
+    </td>
+    <td>
+        <% if pub.registered == "t" %> 
+            Yes
+        <% else %> 
+            No
+        <% end %>
+    </td>
+
+</tr>
+
+<% end %>
+
+</table>
+

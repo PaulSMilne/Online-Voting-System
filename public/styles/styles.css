@@ -1,0 +1,29 @@
+* {font-family: 'Rokkitt', serif;}
+
+body {padding:0;margin:0;}
+
+#masthead {background-color: #91342A; width:100%;margin:0;}
+
+#masthead h1 {width:100%;text-align: center; color:white;padding:10px;}
+
+#masthead a:link, #masthead a:visited {color:white;}
+
+#nav {width:100%; border-bottom: 4px #efefef solid; padding: 10px;text-align: center;color:white;}
+
+#main_content {width:50%;margin:25px auto;}
+
+th {text-align: left;background-color: #999;color:white;padding:5px;}
+option, input {font-family:Helvetica;}
+
+td{background-color:#efefef;padding:5px;}
+label {font-weight:bold;}
+
+a.button {text-decoration: none; background-color: #efefef;padding:5px;font-weight: bold;}
+
+a.button:link, a.button:visited {color:black;}
+
+
+
+table#leaderboard td:first-child, table#all_pubs td:last-child {text-align: center;}
+
+/*table#all_pubs {float:left;margin-right:25px;}*/

@@ -1,0 +1,40 @@
+<h2>Edit Pub</h2>
+
+<form action="/admin/pubs/<%= @pub.id %>" method="post">
+
+<input type="hidden" name="_method" value="put">
+
+<p><label for="name">Name</label><br>
+<input type="text" name="name" value="<%= @pub.name %>" id="name" size="50"></p>
+
+<p><label for="postcode">Postcode<br>
+<input type="text" name="postcode" value="<%= @pub.postcode %>" id="postcode" size="10"></p>
+
+<h3>Registration</h3> 
+
+    <% if @pub.registered == "t" %>
+
+        <p>The pub is <strong>registered</strong>.</p>
+
+        <p>
+            <input type="radio" name="registered" value="true" checked id="true"> <label for="true">Registered</label> <br>
+
+            <input type="radio" name="registered" value="false" id="false"> <label for="false">Not Registered</label>
+        </p>
+
+    <% else %>
+
+        <p>The pub is <strong>not registered</strong>.</p>
+
+ <p>
+     <input type="radio" name="registered" value="true" id="true"> <label for="true">Registered</label> <br>
+
+     <input type="radio" name="registered" value="false" checked id="false"> <label for="false">Not Registered</label>
+ </p>
+
+    <% end %>
+
+<p><input type="submit"></p>
+
+</form>
+

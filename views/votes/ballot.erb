@@ -1,0 +1,22 @@
+<h2>Cast a ballot for <%= @pub.name %></h2>
+
+<p><%= @pub.name %> has been successfully registered to vote.</p>
+
+<p>Please choose no more than three (3) pubs from the candidate list below.</p>
+
+<form action="/votes/cast_ballot" method="post">
+<!--<input type="hidden" name="pub_id" value="<%= @pub.id %>"-->
+
+<% @candidates.each do |candidate| %>
+
+    <% if candidate.name != @pub.name %>
+
+        <p><input type="checkbox" name="vote_id<%= candidate.id  %>" value="<%= candidate.id %>"><%= candidate.name %></p>
+
+    <% end %>
+
+<% end %>
+
+<input type="submit" value="Cast votes">
+
+</form>

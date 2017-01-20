@@ -1,0 +1,28 @@
+<p><a href="/admin/pubs">View all pubs</a></p>
+
+<h2><%= @pub.name %></h2>
+
+<h3><%= @pub.postcode %></h3> 
+
+<p>This pub is <strong 
+
+<% if @pub.registered == "t" %>
+
+    style="color:green">registered
+
+<% else %>
+
+    style="color:red">not registered
+
+<% end %>
+
+</strong>.</p>
+
+<p><a href="/admin/pubs/<%= @pub.id %>/edit" class="button">Edit pub</a></p>
+
+<form action="/admin/pubs/<%= @pub.id %>" method="post">
+
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete this pub">
+
+</form>

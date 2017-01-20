@@ -1,0 +1,24 @@
+<h2>Choose a pub to register</h2>
+
+<form action="/votes/register" method="post">
+
+    <input type="hidden" name="_method" value="put">
+
+    <% if @pubs.count > 0 %>
+
+        <p><select name="id">
+
+        <% @pubs.each do |pub| %>
+        <option value="<%=pub.id%>"><%= pub.name %></option>
+        <% end %>
+    </select></p>
+
+    <p><input type="submit" value="Register Pub"></p>
+
+    <% else %>
+
+    <p>All pubs have voted</p>
+
+    <% end %>
+
+</form>

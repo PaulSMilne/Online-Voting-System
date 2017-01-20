@@ -1,0 +1,13 @@
+<h2>Pub Vote Leaderboard</h2>
+
+<table id="leaderboard">
+    <tr>
+        <th>Votes</th>
+        <th>Name</th>
+    </tr>
+    <% @votes.each do |ballot| %>
+        <tr>
+            <td><%= ballot[1] %></td>
+            <td><%= ballot[0] %></td>
+        </tr>
+    <% end %>
